@@ -1,0 +1,849 @@
+[=========[DOGHEX]=========]
+[===[LOWERCASE TO ZEROS]===]
+*===========================*
+a lowercase letter in the code represents X zeros
+for example a = 0, b = 00, c = 000, d= 0000
+*===========================*
+a  b  c  d  e  f  g  h  i  j  k  l  m  n  o  p  q  r  s  t  u  v  w  x  y  z
+1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26
+
+a   0
+b   00
+c   000
+d   0000
+e   0000 0
+f   0000 00
+g   0000 000
+h   0000 0000
+i   0000 0000 0
+j   0000 0000 00
+k   0000 0000 000
+l   0000 0000 0000
+m   0000 0000 0000 0
+n   0000 0000 0000 00
+o   0000 0000 0000 000
+p   0000 0000 0000 0000
+q   0000 0000 0000 0000 0
+r   0000 0000 0000 0000 00
+s   0000 0000 0000 0000 000
+t   0000 0000 0000 0000 0000
+ 
+[===[HEX TO BINARY]===]
+*===========================*
+single digit hex digits to binary. for hex 0 - 7 the leading zero(s) is(are) normally included, expect for in the case of the second gene property section. there the leading zero(s)
+is(are) only included if the hex 0 - 7 digit is proceeded by hex 8 - F.
+for example, d6 = 0000 110 (d = 0000 and 6 = 110); D6 = 1101 0110 (D = 1101 and 6 = 0110)
+*===========================*
+[=[0 - 7]=]
+[AT BEGINNING]
+0 0
+1 1
+2 10
+3 11
+4 100
+5 101
+6 110
+7 111
+
+[AFTER BEGINNING]
+0 0000
+1 0001
+2 0010
+3 0011
+4 0100
+5 0101
+6 0110
+7 0111
+
+[=[8 - F]=]
+8 1000
+9 1001
+A 1010
+B 1011
+C 1100
+D 1101
+E 1110
+F 1111
+
+[===[SEPARATOR SYMBOLS]===]
+*===========================*
+an unspooled seperator represents the "|" plus X trailing digits/symbols
+for example : = |00
+using the above lowercase to zeros, :c = |00000
+*===========================*
+:    |00
+;    |01
+<    |10
+=    |11
+>    ||0
+?    ||1
+@    |0|
+[    |1|
+#    |||
+]    |0
+^    |1
+_    ||
+*    |
+
+[===[UNSPOOLING]===]
+*===========================*
+the unspooled code is converted to hex for every 20 digits. if there is a 0 (or multiple zeros) at the start of the code, they are translated to a lowercase letter, as shown above. therefore, to unspool the code, simply divide the code section by lowercase letter and/or every 5 hex digits (as one hex digit is equal to 4 binary digits)
+a number in the code is also translated into a 4 digit binary digit
+for example, using the first section of the default gene property "a91000t"; as the "a" and "t" are both lowercase, those can be sectioned out, like so: "a 91000 t". using the above lowercase to zeros "a" = "0" and "t" = "0000 0000 0000 0000 0000"
+this leaves only the hex "91000" to translate, which converts to "1001 0001 0000 0000 0000". putting this all together gives us "0 1001 0001 0000 0000 0000 0000 0000 0000 0000 0000". another thing to remember is that most of the gene properties are 5 digits long (ie 11111). there are a few execptions, such as the random seed at the start, which is 10 digits long. keeping this in mind, the code can now be read as "0100100010 00000 00000 00000 00000 00000 00000 0". as you can see, there is a spare "0" at the end of the code. this is because it was only a partial section; the entire gene property code needs to be unspooled to prevent mishaps such as this.
+*===========================*
+
+[=========[DEFAULT DOG CODE]=========]
+[===[UNWOUND CODE]===]
+^^^2^a91000ttttttttttttttttttttttttttttttd:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:m:m^FFAFACFFFFFEBEFFFBEEEF3FFFFEFF3F^ADULT^0^0^0^1111100^Default
+
+[===[UNSPOOLED CODE]===]
+[FULL CODE]
+^ ^ ^ 2 ^ 0100100010 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 00000 0000000000000000000000000 0000000000000000000000000 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |00000 |000000000000000 |000000000000000 ^ 11 11 11 11 10 10 11 11 10 10 11 00 11 11 11 11 11 11 11 11 11 11 11 10 10 11 11 10 11 11 11 11 11 11 10 11 11 10 11 10 11 10 11 11 00 11 11 11 11 11 11 11 11 11 11 10 11 11 11 11 11 11 11 ^ ADULT ^ 0 ^ 0 ^ 0 ^ 1 1 1 1 1 0 0 ^ Default
+
+[GENETIC VERSION]
+2
+
+[GENETIC PROPERTY 00]
+a91000ttttttttttttttttttttttttttttttd
+
+[GENETIC PROPERTY 01]
+:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:m:m
+
+[GENETIC DOM REC PROPERTY]
+FFAFACFFFFFEBEFFFBEEEF3FFFFEFF3F
+
+[DOG AGE]
+ADULT
+
+[AGE PROGRESS]
+0
+
+[????]
+0
+
+[????]
+0
+
+[PERSONALITY TYPE]
+1111100
+
+[DOG NAME]
+Default
+
+[GENETIC PROPERTY 00]
+a91000ttttttttttttttttttttttttttttttd
+
+[GENETIC PROPERTY 00 DIVIDED]
+a       00
+91000   01
+t       02
+t       03
+t       04
+t       05
+t       06
+t       07
+t       08
+t       09
+t       0A
+t       0B
+t       0C
+t       0D
+t       0E
+t       0F
+t       10
+t       11
+t       12
+t       13
+t       14
+t       15
+t       16
+t       17
+t       18
+t       19
+t       1A
+t       1B
+t       1C
+t       1D
+t       1E
+t       1F
+d       20
+
+[GENETIC PROPERTY 00 UNSPOOLED]
+00    0
+01    1001 0001 0000 0000 0000
+02    0000 0000 0000 0000 0000
+03    0000 0000 0000 0000 0000
+04    0000 0000 0000 0000 0000
+05    0000 0000 0000 0000 0000
+06    0000 0000 0000 0000 0000
+07    0000 0000 0000 0000 0000
+08    0000 0000 0000 0000 0000
+09    0000 0000 0000 0000 0000
+0A    0000 0000 0000 0000 0000
+0B    0000 0000 0000 0000 0000
+0C    0000 0000 0000 0000 0000
+0D    0000 0000 0000 0000 0000
+0E    0000 0000 0000 0000 0000
+0F    0000 0000 0000 0000 0000
+10    0000 0000 0000 0000 0000
+11    0000 0000 0000 0000 0000
+12    0000 0000 0000 0000 0000
+13    0000 0000 0000 0000 0000
+14    0000 0000 0000 0000 0000
+15    0000 0000 0000 0000 0000
+16    0000 0000 0000 0000 0000
+17    0000 0000 0000 0000 0000
+18    0000 0000 0000 0000 0000
+19    0000 0000 0000 0000 0000
+1A    0000 0000 0000 0000 0000
+1B    0000 0000 0000 0000 0000
+1C    0000 0000 0000 0000 0000
+1D    0000 0000 0000 0000 0000
+1E    0000 0000 0000 0000 0000
+1F    0000 0000 0000 0000 0000
+20    0000
+
+[=========[GENETIC PROPERTY 00 LIST]=========]
+*===========================*
+the current gene prop 00 has 625 binary digits
+5 digits each for pattern alpha/frequency (10 digits total), 10 digits for the random seed, 25 digits each for pattern flip x/y (50 digits total), 125 digits for pattern variation. this comes to a grand total of 195 digits
+the remaining digits are divided into sets of 5 paired into plus and minus
+
+there are five categories a gene can be sorted into: BODY, which affect the main body, tail(s), and/or wing(s); LEGS, which affect the leg(s), head(s),and snout(s); HEAD (here probably meaning parts that are attached to the head?), which affect the nose(s), ear(s), and horn(s); PATTERN, which affects the pattern on the main body; MISC, which covers everything else
+
+the first four categories (BODY, LEGS, HEAD, PATTERN) each have gene pairs that cover reflectiveness (one pair of 5 digits each, or 10 digits), shininess (one pair of 5 digits each, or 10 digits), base color rgb (three pairs of 5 digits each, or 30 digits), and emission color rgb (three pairs of 5 digits each, or 30 digits). this comes to a total of eight pairs of five digits, or 80 digits per category. this comes to a grand total of 320 digits
+
+the first three categories (BODY, LEGS, HEAD) also cover certain mods (scale, rotation, etc); the remaining mods are covered in gene prop 01
+the following mods are covered in this gene prop; BODY: one pair of 5 digits each, or 10 digits; LEGS: 6 pairs of 5 digits each, or 60 digits; HEAD: four pairs of 5 digits each, or 40 digits. this comes to a grand total of 110 digits
+
+this all comes to eighty-eight 5 digit genes, one 10 digit gene, two 25 digit genes, and one 125 digit gene
+*===========================*
+[======[PATTERN]======]
+*===========================*
+the random seed determines the pattern style
+*===========================*
+[===[SEED]===]
+*===========================*
+random seed contains 10 digits, or 2 sets of 5 (2*5)
+*===========================*
+RandomSeed
+0100100010
+[======[BODY]======]
+*===========================*
+body, tail, wing
+*===========================*
+[====[COLOR_METAL_SHINE]====]
+[===[REFLECTIVENESS]===]
+[METALLIC]
+BodyMetallicPlus
+00000
+BodyMetallicMinus
+00000
+[===[SHININESS]===]
+[GLOSS]
+BodyGlossPlus
+00000
+BodyGlossMinus
+00000
+[===[EMISSION_COlOR]===]
+[EMISSION_RED]
+BodyEmissionColorRPlus
+00000
+BodyEmissionColorRMinus
+00000
+[EMISSION_GREEN]
+BodyEmissionColorGPlus
+00000
+BodyEmissionColorGMinus
+00000
+[EMISSION_BLUE]
+BodyEmissionColorBPlus
+00000
+BodyEmissionColorBMinus
+00000
+[===[BASE_COlOR]===]
+[BASE_RED]
+BodyColorRPlus
+00000
+BodyColorRMinus
+00000
+[BASE_GREEN]
+BodyColorGPlus
+00000
+BodyColorGMinus
+00000
+[BASE_BLUE]
+BodyColorBPlus
+00000
+BodyColorBMinus
+00000
+[======[LEG]======]
+*===========================*
+leg, head, snout
+*===========================*
+[====[COLOR_METAL_SHINE]====]
+[===[REFLECTIVENESS]===]
+[METALLIC]
+LegMetallicPlus
+00000
+LegMetallicMinus
+00000
+[===[SHININESS]===]
+[GLOSS]
+LegGlossPlus
+00000
+LegGlossMinus
+00000
+[===[EMISSION_COlOR]===]
+[EMISSION_RED]
+LegEmissionColorRPlus
+00000
+LegEmissionColorRMinus
+00000
+[EMISSION_GREEN]
+LegEmissionColorGPlus
+00000
+LegEmissionColorGMinus
+00000
+[EMISSION_BLUE]
+LegEmissionColorBPlus
+00000
+LegEmissionColorBMinus
+00000
+[===[BASE_COlOR]===]
+[BASE_RED]
+LegColorRPlus
+00000
+LegColorRMinus
+00000
+[BASE_GREEN]
+LegColorGPlus
+00000
+LegColorGMinus
+00000
+[BASE_BLUE]
+LegColorBPlus
+00000
+LegColorBMinus
+00000
+[======[NOSE_EAR]======]
+*===========================*
+nose, ear, horn
+*===========================*
+[====[COLOR_METAL_SHINE]====]
+[===[REFLECTIVENESS]===]
+[METALLIC]
+NoseEarMetallicPlus
+00000
+NoseEarMetallicMinus
+00000
+[===[SHININESS]===]
+[GLOSS]
+NoseEarGlossPlus
+00000
+NoseEarGlossMinus
+00000
+[===[EMISSION_COlOR]===]
+[EMISSION_RED]
+NoseEarEmissionColorRPlus
+00000
+NoseEarEmissionColorRMinus
+00000
+[EMISSION_GREEN]
+NoseEarEmissionColorGPlus
+00000
+NoseEarEmissionColorGMinus
+00000
+[EMISSION_BLUE]
+NoseEarEmissionColorBPlus
+00000
+NoseEarEmissionColorBMinus
+00000
+[===[BASE_COlOR]===]
+[BASE_RED]
+NoseEarColorRPlus
+00000
+NoseEarColorRMinus
+00000
+[BASE_GREEN]
+NoseEarColorGPlus
+00000
+NoseEarColorGMinus
+00000
+[BASE_BLUE]
+NoseEarColorBPlus
+00000
+NoseEarColorBMinus
+00000
+[====[MOD]====]
+[===[NOSE]===]
+[SIZE]
+NoseModAPlus
+00000
+NoseModAMinus
+00000
+[===[HORN]===]
+[SIZE]
+HornSizePlus
+00000
+HornSizeMinus
+00000
+[===[EAR]===]
+[LENGTH]
+EarModAPlus
+00000
+EarModAMinus
+00000
+[CURL]
+EarCurlLeft
+00000
+EarCurlRight
+00000
+[======[LEG]======]
+[====[MOD]====]
+[===[SNOUT]===]
+[ROTATION]
+SnoutModAPlus
+00000
+SnoutModAMinus
+00000
+[LENGTH]
+SnoutModBPlus
+00000
+SnoutModBMinus
+00000
+[SIZE]
+SnoutModCPlus
+00000
+SnoutModCMinus
+00000
+[===[HEAD====]
+[SIZE]
+HeadSizePlus
+00000
+HeadSizeMinus
+00000
+[======[BODY]======]
+[====[MOD]====]
+[===[WING]===]
+[SIZE]
+WingSizePlus???
+00000
+WingSizeMinus???
+00000
+[======[LEG]======]
+[===[STANCE]===]
+[FRONT]
+StanceWidthFrontPlus
+00000
+StanceWidthFrontMinus
+00000
+[BACK]
+StanceWidthBackPlus
+00000
+StanceWidthBackMinus
+00000
+[======[PATTERN]======]
+[====[COLOR_METAL_SHINE]====]
+[===[BASE_COlOR]===]
+[BASE_RED]
+PatternColorRPlus
+00000
+PatternColorRMinus
+00000
+[BASE_GREEN]
+PatternColorGPlus
+00000
+PatternColorGMinus
+00000
+[BASE_BLUE]
+PatternColorBPlus
+00000
+PatternColorBMinus
+00000
+[===[EMISSION_COlOR]===]
+[EMISSION_RED]
+PatternEmissionColorRPlus
+00000
+PatternEmissionColorRMinus
+00000
+[EMISSION_GREEN]
+PatternEmissionColorGPlus
+00000
+PatternEmissionColorGMinus
+00000
+[EMISSION_BLUE]
+PatternEmissionColorBPlus
+00000
+PatternEmissionColorBMinus
+00000
+[ALPHA]
+PatternAlpha
+00000
+[===[REFLECTIVENESS]===]
+[METALLIC]
+PatternMetallicPlus
+00000
+PatternMetallicMinus
+00000
+[===[SHININESS]===]
+[GLOSS]
+PatternSmoothnessPlus
+00000
+PatternSmoothnessMinus
+00000
+[====[MOD]====]
+[FREQUENCY]
+PatternNum
+00000
+[FLIP]
+*===========================*
+pattern flip x/y contain 25 digits, or 5 sets of 5, or 5^2 (5 * 5)
+*===========================*
+PatternFlipX
+0000000000000000000000000
+PatternFlipY
+0000000000000000000000000
+[VARIATION]
+*===========================*
+pattern info contains 125 digits, or 5 sets of 25, or 5^3 (5 * 5 * 5)
+*===========================*
+PatternInfo
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+[GENETIC PROPERTY 01]
+:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:c:m:m
+
+[GENETIC PROPERTY 01 UNSPOOLED]
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:c
+|00000
+:m
+|000000000000000
+:m
+|000000000000000
+
+[GENETIC PROPERTY 01 LIST]
+HeadNumber
+|00000
+BodyScaleXPlus
+|00000
+BodyScaleXMinus
+|00000
+BodyScaleZPlus
+|00000
+BodyScaleZMinus
+|00000
+BodyScaleYPlus
+|00000
+BodyScaleYMinus
+|00000
+BodyScaleYZPlus
+|00000
+BodyScaleYZMinus
+|00000
+BodyScaleGlobalPlus
+|00000
+BodyScaleGlobalMinus
+|00000
+ScalePlus
+|00000
+TailScaleMinus
+|00000
+TailNum
+|00000
+LegScaleXZFrontPlus
+|00000
+LegScaleXZFrontMinus
+|00000
+LegScaleXZBackPlus
+|00000
+LegScaleXZBackMinus
+|00000
+LegScaleYFrontTopPlus
+|00000
+LegScaleYFrontTopMinus
+|00000
+LegScaleYFrontBotPlus
+|00000
+LegScaleYFrontBotMinus
+|00000
+LegScaleYBackTopPlus
+|00000
+LegScaleYBackTopMinus
+|00000
+LegScaleYBackBotPlus
+|00000
+LegScaleYBackBotMinus
+|00000
+LegPairsFront
+|000000000000000
+LegPairsBack
+|000000000000000
+
+[GENETIC DOM REC PROPERTY]
+FFAFACFFFFFEBEFFFBEEEF3FFFFEFF3F
+FF AFACF FF F FEB EF FF BEE EF 3 FFFF EFF 3F
+
+[GENETIC DOM REC PROPERTY DIVIDED]
+FFAFA   00
+CFFFF   01
+FEBEF   02
+FFBEE   03
+EF3FF   04
+FFEFF   05
+3F      06
+
+[GENETIC DOM REC PROPERTY UNSPOOLED]
+00    1111 1111 1010 1111 1010
+01    1100 1111 1111 1111 1111
+02    1111 1110 1011 1110 1111
+03    1111 1111 1011 1110 1110
+04    1110 1111 0011 1111 1111
+05    1111 1111 1110 1111 1111
+06    11 11 11
+
+[GENETIC DOM REC PROPERTY LIST]
+NONE
+
+MISSING_FRONT_LEFT_LEG
+
+MISSING_FRONT_RIGHT_LEG
+
+MISSING_BACK_LEFT_LEG
+
+MISSING_BACK_RIGHT_LEG
+
+VOICE_PITCH_HIGH
+
+VOICE_PITCH_LOW
+
+VOICE_HOARSE
+
+SMALL_PUPILS
+
+EYELIDS
+
+OBLONG_EYES
+
+MULTI_PUPILS
+
+TEETH
+
+V_MOUTH
+
+OPEN_MOUTH
+
+TILTED_EARS
+
+NUB_TAIL
+
+STIFF_TAIL
+
+SLIGHTLY_CURLED_TAIL
+
+CURLED_TAIL
+
+NO_TAIL
+
+NO_PATTERN
+
+SPLOTCH_PATTERN
+
+STRIPE_PATTERN
+
+REPEATING_PATTERN
+
+LONG_EYES
+
+HORIZONTAL_EYES
+
+SPIRAL_EYES
+
+TRIANGLE_EYES
+
+MISSING_PUPIL_EYES
+
+GEOMETRIC_EYES
+
+DECORATIVE_EYES
+
+LASHES_EYES
+
+NO_WINGS
+
+MISSING_LEFT_WING
+
+MISSING_RIGHT_WING
+
+WING_ISSUES
+
+WING_FEATHERS
+
+ALIGNMENT_NEUTRAL
+
+ALIGNMENT_GOOD
+
+ALIGNMENT_EVIL
+
+FLAT_TAIL
+
+BULBOUS_TAIL
+
+REPEATED_TAIL
+
+THIN_TAIL
+
+TAIL_3D
+
+NOSE_EXTRUSION
+
+NOSE_SQUISH
+
+NOSE_STRETCH
+
+NOSE_FLAT
+
+NOSE_REPEATED
+
+EAR_FILLED
+
+EAR_FLOPPY
+
+EAR_PARTIAL_FLOP
+
+EAR_SHARP
+
+EAR_HALVED
+
+EAR_CONIC
+
+MOUTH_CHEEKS
+
+MOUTH_MISSING_TEETH
+
+MOUTH_POINTED
+
+MOUTH_NEUTRAL
+
+MOUTH_SMILE
+
+MOUTH_FROWN
+
+MOUTH_CUTOFF
+
+MOUTH_WIGGLE
+
+EAR_CURL_SYNCED
+
+HORNS_TRADITIONAL
+
+HORNS_CENTER
+
+HORNS_NONE
+
+HORNS_CURLED
+
+HORNS_NUB
+
+HORNS_THICK
+
+HORNS_THIN
+
+[=========[GENE PARTS]=========]
+[GENE CATEGORY]
+BODY, LEGS, HEAD, PATTERN, MISC
+
+BODY    =   Body, Tail, Wing
+LEGS    =   Leg, Head, Snout
+HEAD    =   Nose, Ear, Horn
+PATTERN =   Pattern (body only)
+MISC    =   
+
+[GENE TYPE]
+STANDARD, SUPER, LOOPED
+
+[GENETIC VERSION]
+ALL = -1, ZERO = 0, ONE = 1, TWO = 2
+
+[GENETIC PROPERTY 00]
+BodyMetallicPlus, BodyMetallicMinus, BodyGlossPlus, BodyGlossMinus, BodyEmissionColorRPlus, BodyEmissionColorRMinus, BodyEmissionColorGPlus, BodyEmissionColorGMinus, BodyEmissionColorBPlus, BodyEmissionColorBMinus, BodyColorRPlus, BodyColorRMinus, BodyColorGPlus, BodyColorGMinus, BodyColorBPlus, BodyColorBMinus, LegMetallicPlus, LegMetallicMinus, LegGlossPlus, LegGlossMinus, LegEmissionColorRPlus, LegEmissionColorRMinus, LegEmissionColorGPlus, LegEmissionColorGMinus, LegEmissionColorBPlus, LegEmissionColorBMinus, LegColorRPlus, LegColorRMinus, LegColorGPlus, LegColorGMinus, LegColorBPlus, LegColorBMinus, NoseEarMetallicPlus, NoseEarMetallicMinus, NoseEarGlossPlus, NoseEarGlossMinus, NoseEarEmissionColorRPlus, NoseEarEmissionColorRMinus, NoseEarEmissionColorGPlus, NoseEarEmissionColorGMinus, NoseEarEmissionColorBPlus, NoseEarEmissionColorBMinus, NoseEarColorRPlus, NoseEarColorRMinus, NoseEarColorGPlus, NoseEarColorGMinus, NoseEarColorBPlus, NoseEarColorBMinus, NoseModAPlus, NoseModAMinus, HornSizePlus, HornSizeMinus, EarModAPlus, EarModAMinus, EarCurlLeft, EarCurlRight, SnoutModAPlus, SnoutModAMinus, SnoutModBPlus, SnoutModBMinus, SnoutModCPlus, SnoutModCMinus, HeadSizePlus, HeadSizeMinus, WingSizePlus, WingSizeMinus, StanceWidthFrontPlus, StanceWidthFrontMinus, StanceWidthBackPlus, StanceWidthBackMinus, PatternColorRPlus, PatternColorRMinus, PatternColorGPlus, PatternColorGMinus, PatternColorBPlus, PatternColorBMinus, PatternEmissionColorRPlus, PatternEmissionColorRMinus, PatternEmissionColorGPlus, PatternEmissionColorGMinus, PatternEmissionColorBPlus, PatternEmissionColorBMinus, PatternAlpha, PatternMetallicPlus, PatternMetallicMinus, PatternFlipX, PatternFlipY, PatternInfo
+
+[GENETIC PROPERTY 01]
+HeadNumber, BodyScaleXPlus, BodyScaleXMinus, BodyScaleZPlus, BodyScaleZMinus, BodyScaleYPlus, BodyScaleYMinus, BodyScaleYZPlus, BodyScaleYZMinus, BodyScaleGlobalPlus, BodyScaleGlobalMinus, TailScalePlus, TailScaleMinus, TailNum, LegScaleXZFrontPlus, LegScaleXZFrontMinus, LegScaleXZBackPlus, LegScaleXZBackMinus, LegScaleYFrontTopPlus, LegScaleYFrontTopMinus, LegScaleYFrontBotPlus, LegScaleYFrontBotMinus, LegScaleYBackTopPlus, LegScaleYBackTopMinus, LegScaleYBackBotPlus, LegScaleYBackBotMinus, LegPairsFront, LegPairsBack
+
+[GENETIC DOM REC PROPERTY]
+
+NONE, MISSING_FRONT_LEFT_LEG, MISSING_FRONT_RIGHT_LEG, MISSING_BACK_LEFT_LEG, MISSING_BACK_RIGHT_LEG, VOICE_PITCH_HIGH, VOICE_PITCH_LOW, VOICE_HOARSE, SMALL_PUPILS, EYELIDS, OBLONG_EYES, MULTI_PUPILS, TEETH, V_MOUTH, OPEN_MOUTH, TILTED_EARS, NUB_TAIL, STIFF_TAIL, SLIGHTLY_CURLED_TAIL, CURLED_TAIL, NO_TAIL, NO_PATTERN, SPLOTCH_PATTERN, STRIPE_PATTERN, REPEATING_PATTERN, LONG_EYES, HORIZONTAL_EYES, SPIRAL_EYES, TRIANGLE_EYES, MISSING_PUPIL_EYES, GEOMETRIC_EYES, DECORATIVE_EYES, LASHES_EYES, NO_WINGS, MISSING_LEFT_WING, MISSING_RIGHT_WING, WING_ISSUES, WING_FEATHERS, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD, ALIGNMENT_EVIL, FLAT_TAIL, BULBOUS_TAIL, REPEATED_TAIL, THIN_TAIL, TAIL_3D, NOSE_EXTRUSION, NOSE_SQUISH, NOSE_STRETCH, NOSE_FLAT, NOSE_REPEATED, EAR_FILLED, EAR_FLOPPY, EAR_PARTIAL_FLOP, EAR_SHARP, EAR_HALVED, EAR_CONIC, MOUTH_CHEEKS, MOUTH_MISSING_TEETH, MOUTH_POINTED, MOUTH_NEUTRAL, MOUTH_SMILE, MOUTH_FROWN, MOUTH_CUTOFF, MOUTH_WIGGLE, EAR_CURL_SYNCED, HORNS_TRADITIONAL, HORNS_CENTER, HORNS_NONE, HORNS_CURLED, HORNS_NUB, HORNS_THICK, HORNS_THIN
+[DOG AGE]
+NONE, PUPPY, CHILD, TEEN, YOUNG_ADULT, ADULT, ANCIENT
+
+[PERSONALITY TYPE]
+SOCIAL, ENERGY, FOOD, MISCHIEF, NICENESS, PETTABLE, LOUDNESS
+
+[MASTER DOG GENE]
+currentGeneticVersion           =   TWO;
+seperatorSymbol                 =   '|';
+mutationRate                    =   0.0075f;
+baseDomRecMutationRate          =   0f;
+maxDomRecMutationRate           =   0.0075f;
+gutFloraMutationMax             =   0xF;
+mutationRateMin                 =   0.15f;
+mutationRateMax                 =   1f;
+crossoverRate                   =   0.7f;
+superMutationRate               =   0.05f;
+randomSeedSize                  =   0xA;
+randomSeed                      =   0100100010
+
+[DOG NAME]
+dogNameCharLimit                =   0xF
